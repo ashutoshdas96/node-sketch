@@ -1,6 +1,5 @@
 const Node = require('./Node');
 const path = require('path');
-const fs = require('fs');
 
 /**
  * Represents a file, for example an image
@@ -43,7 +42,6 @@ class FileReference extends Node {
 
                 file
                     .nodeStream()
-                    .pipe(fs.createWriteStream(dest))
                     .on('finish', () => {
                         fulfill(dest);
                     })

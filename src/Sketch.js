@@ -1,4 +1,4 @@
-const fs = require('fs');
+// const fs = require('fs');
 const lib = require('../');
 
 /**
@@ -109,7 +109,7 @@ class Sketch {
                         streamFiles: true,
                         compression: 'DEFLATE'
                     })
-                    .pipe(fs.createWriteStream(file))
+                // .pipe(fs.createWriteStream(file))
                     .on('finish', () => {
                         resolve(file);
                     })

@@ -1,4 +1,3 @@
-const fs = require('fs');
 const JSZip = require('jszip');
 const Sketch = require('./src/Sketch');
 
@@ -33,7 +32,7 @@ const Sketch = require('./src/Sketch');
             return Promise.all(file.map(each => lib.read(each)));
         }
 
-        return JSZip.loadAsync(fs.readFileSync(file))
+        return JSZip.loadAsync(new Buffer(file, 'base64'))
             .then(zip => {
                 return Promise.all([
                     zip.file('document.json').async('string'),

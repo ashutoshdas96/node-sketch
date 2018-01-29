@@ -1,3 +1,6 @@
+Modified the originall library to make it webpack friendly.
+Using buffer instead of fs
+
 # 💎 node-sketch
 Javascript library to manipulate sketch files
 
